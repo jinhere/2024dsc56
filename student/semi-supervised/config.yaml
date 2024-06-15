@@ -1,0 +1,16 @@
+# path: /data/yechan2468/share/sample_for_testing_ssl
+# path: sample_for_testing_ssl
+train: train/images/ # train images (relative to 'path')
+# val: val/images/ # val images (relative to 'path')
+val: test/images
+
+# Classes
+names:
+  0: card
+  1: cardholder
+  2: earbuds
+  3: glasses
+  4: gloves
+  5: muffler
+  6: phone
+  7: umbrella

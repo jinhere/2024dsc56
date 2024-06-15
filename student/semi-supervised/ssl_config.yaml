@@ -1,0 +1,16 @@
+# path: /data/yechan2468/share/June5th/pseudolabeled/augmented # root dir. absolute path
+path: C:\yechan\seafile\Seafile\univ\데이터분석캡스톤디자인 (이대호)\sftp
+train: train # train images (relative to 'path')
+val: test
+#test: test/images
+
+# Classes
+names:
+  0: card
+  1: cardholder
+  2: earbuds
+  3: glasses
+  4: gloves
+  5: muffler
+  6: phone
+  7: umbrella
