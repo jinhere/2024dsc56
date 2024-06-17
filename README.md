@@ -99,5 +99,5 @@ results=model.train(data='config.yaml',epochs=100)
 마지막으로, 경찰청의 인력 자원을 더 효율적으로 사용할 수 있다. 분실물 정보를 자동으로 등록함으로써 관리자의 업무 부담을 줄이고, 이를 통해 보다 중요한 업무에 인력을 집중할 수 있다. 이는 경찰청의 운영 효율성을 높이고, 전체적인 업무 처리 속도를 개선할 수 있다.
 
 ## Reports
-* Midterm: [Report](Reports/Mid.pdf)
-* Final: [Report](Reports/Final.pdf), [Demo video](Reports/Demo.mp4)
+* Midterm: [Report](Reports/데이터분석캡스톤디자인_중간보고서.pdf)
+* Final: [Report](Reports/데이터분석캡스톤디자인_중간보고서.pdf), [Demo video](Reports/Demo_link.txt)
