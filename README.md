@@ -55,10 +55,10 @@ results=model.train(data='config.yaml',epochs=100)
 
 ## Semi Supervised Learning Flow
 <img width="484" alt="image" src="https://github.com/jinhere/Lost-and-Found-with-YOLO/assets/74696590/ac7af0fb-36c7-4b59-baa4-1b9aedce40ea">
-
-
 <br>
+
 ## Results
+
 ### 성능 평가 결과 <br>
 <img width="495" alt="image" src="https://github.com/jinhere/Lost-and-Found-with-YOLO/assets/74696590/d93f21c7-e347-498a-ba0a-89b7b3aa65a0">
 
@@ -77,10 +77,10 @@ results=model.train(data='config.yaml',epochs=100)
 - confidence threshold를 설정할 때 좀 더 다양한 range의 confidence threshold 값으로 실험을 할 수 있었다면 최적의 threshold를 찾을 수 있을 것이다. 하지만 여러 threshold값들을 무작위로 선정하기보다는, 특정 기준을 가지고 threshold 후보를 선택한다면 더 효과적으로 최적값을 찾을 수 있을 것이다. 예를 들어, 가장 f1 score가 높은 confidence값 근방의 값을 선별한다던가, 프로젝트의 특성에 따라 지켜져야 하는 최소 precision과 recall값 기준이 있다면 대응하는 confidence 값의 근방값들로 범위를 좁힐 수 있다.
 - teacher 학습시와 마찬가지로 student 모델의 학습데이터에도 해당 8개 클래스 외 물건들이 포함된 background 클래스의 사진들을 일정 비율 포함했다면 generalization performance를 더 높일 수 있었을 것이다. 
 
-   #### Hyperparamter Tuning의 한계
+#### Hyperparamter Tuning의 한계
 - 트레이닝 configuration시 epoch 외 하이퍼파라미터들은 설정값을 사용했었다. 하지만 학습률, 배치 크기, 앵커 박스 개수와 크기, 네트워크 깊이, 네트워크 폭, 셀 그리드 크기, 객체성 손실 가중치, 클래스 손실 가중치, 좌표 손실 가중치, 비객체성 손실 가중치, 드롭아웃 비율, 데이터 증강 기법, 초기 가중치, 그리고 최적화 알고리즘 등의 하이퍼파라미터들을 조정하여 성능을 향상시킬 수 있다.
 
-   #### Augmentation 방법에서의 잠재적인 문제
+#### Augmentation 방법에서의 잠재적인 문제
 아래와 같은 사항들을 고려했다면 student model의 성능을 높이는 데에 도움을 주었을 것으로 추측한다.
 
 - 본 연구에서는 augmentation의 강도를 설정할 때, 객관적인 기준 없이 강도를 설정하였다. Augmented 이미지에서 사람이 물체의 위치와 종류를 판별할 수 있을 정도로 augmentation을 진행했으나, 그 기준이 모호하고 주관적이었기 때문에 성능 향상을 저해했을 수 있다.
@@ -89,7 +89,7 @@ results=model.train(data='config.yaml',epochs=100)
   - 한 가지가 아닌, 여러 가지 augmentation 방식을 섞어서 사용하면 더 좋은 성능을 냈을 가능성이 있다.
   - 연구 진행 중, YOLO 내부에서 이미 기본값으로 augmentation을 한다는 사실을 뒤늦게 알게 되었다. Student model의 training set에 strong augmentation을 적용했는데, 거기에 추가로 augmentation을 했던 것이다. 이 때문에 student model이  object를 잘 detect하기 어렵게 만들었을 수 있다.
 
-   #### Semi-supervised model architecture의 잠재적인 문제
+#### Semi-supervised model architecture의 잠재적인 문제
 연구 중, 비록 제한된 조건 하에서였지만, 전이학습을 진행하지 않은 student model이 전이학습을 진행한 student model보다 성능이 더 뛰어난 결과를 보인 사례가 있었다. 이는 전이학습을 통해 student model의 학습 시간을 줄이면서 성능을 높일 것이라는 일반적인 기대를 벗어난 결과였다. Student model의 성능 향상을 위해, 전이학습이 아닌 다른 방법을 시도하는 것을 고려해볼 수 있다.
 
 ## 기대효과 및 활용방안
